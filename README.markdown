@@ -7,6 +7,8 @@ keep the code in our tutorials consistent.
 Our overarching goals are __conciseness__, __readability__ and __simplicity__.
 
 
+Thia is inspired by [Raywenderlich](https://github.com/raywenderlich/java-style-guide)
+
 ## Inspiration
 
 This style-guide is somewhat of a mash-up between the existing Java language
