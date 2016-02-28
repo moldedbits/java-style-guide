@@ -301,6 +301,8 @@ However, it is encouraged to use the field directly when accessing internally
 (i.e. from inside the class). This is a performance optimization recommended
 by Google: http://developer.android.com/training/articles/perf-tips.html#GettersSetters
 
+Prefer Lombok @Getter and @Setter annotations.
+
 ## Brace Style
 
 Only trailing closing-braces are awarded their own line. All others appear the
@@ -515,30 +517,6 @@ file:
      * THE SOFTWARE.
      */
 
-## Smiley Face
-
-Smiley faces are a very prominent style feature of the raywenderlich.com site!
-It is very important to have the correct smile signifying the immense amount of
-happiness and excitement for the coding topic. The closing square bracket ] is
-used because it represents the largest smile able to be captured using ASCII
-art. A closing parenthesis ) creates a half-hearted smile, and thus is not
-preferred.
-
-Bad:
-
-    :)
-
-Good:
-
-    :]
-
 ## Credits
 
-This style guide is a collaborative effort from the most stylish
-raywenderlich.com team members:
-
-- [Darryl Bayliss](https://github.com/DarrylBayliss)
-- [Sam Davies](https://github.com/sammyd)
-- [Mic Pringle](https://github.com/micpringle)
-- [Ray Wenderlich](https://github.com/rwenderlich)
 
