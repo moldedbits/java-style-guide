@@ -1,4 +1,4 @@
-# The Official raywenderlich.com Java Style Guide
+# The Official MoldedBits Java Style Guide
 
 This style guide is different from other you may see, because the focus is
 centered on readability for print and the web. We created this style guide to
@@ -70,8 +70,6 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [XML Attribute Ordering](#xml-attribute-ordering)
 - [Language](#language)
 - [Copyright Statement](#copyright-statement)
-- [Smiley Face](#smiley-face)
-- [Credit](#credits)
 
 
 ## Nomenclature
@@ -80,20 +78,19 @@ On the whole, naming should follow Java standards.
 
 ### Packages
 
-Package names are all __lower-case__, multiple words concatenated together,
-without
-hypens or underscores:
+Package names are all lowercase, with consecutive words simply concatenated together (no underscores, no hyphens).
 
 __BAD__:
 
 ```java
-com.RayWenderlich.funky_widget
+com.example.deepSpace
+com.example.deep_space
 ```
 
 __GOOD__:
 
 ```java
-com.raywenderlich.funkywidget
+com.example.deepspace
 ```
 
 ### Classes & Interfaces
@@ -126,7 +123,7 @@ For example:
 ```java
 public class MyClass {
   public static final int SOME_CONSTANT = 42;
-  public int publicField;
+  public int mPublicField;
   private static MyClass sSingleton;
   int mPackagePrivate;
   private int mPrivate;
@@ -206,7 +203,7 @@ private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 
 ## Spacing
 
-Spacing is especially important in raywenderlich.com code, as code needs to be
+Spacing is especially important in MoldedBits code, as code needs to be
 easily readable as part of the tutorial. Java does not lend itself well to this.
 
 ### Indentation
@@ -215,7 +212,7 @@ Indentation is using spaces - never tabs.
 
 #### Blocks
 
-Indentation for blocks uses 2 spaces (not the default 4):
+Each time a new block or block-like construct is opened, the indent increases by two spaces. When the block ends, the indent returns to the previous indent level. The indent level applies to both code and comments throughout the block. 
 
 __BAD:__
 
@@ -235,6 +232,8 @@ for (int i = 0; i < 10; i++) {
 
 #### Line Wraps
 
+Terminology Note: When code that might otherwise legally occupy a single line is divided into multiple lines, typically to avoid overflowing the column limit, this activity is called line-wrapping.
+
 Indentation for line wraps should use 4 spaces (not the default 8):
 
 __BAD:__
@@ -250,6 +249,34 @@ __GOOD:__
 CoolUiWidget widget =
     someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line);
 ```
+The prime directive of line-wrapping is: prefer to break at a higher syntactic level. Also:
+
+When a line is broken at a non-assignment operator the break comes before the symbol.
+This also applies to the following "operator-like" symbols: the dot separator (.), the ampersand in type bounds (<T extends Foo & Bar>), and the pipe in catch blocks (catch (FooException | BarException e)).
+When a line is broken at an assignment operator the break typically comes after the symbol, but either way is acceptable.
+This also applies to the "assignment-operator-like" colon in an enhanced for ("foreach") statement.
+A method or constructor name stays attached to the open parenthesis (() that follows it.
+A comma (,) stays attached to the token that precedes it.
+
+__BAD:__
+```
+Counter.getInstance().
+    getCount();
+    
+if (value != null && 
+    value.equals(value2)
+```
+
+__GOOD:__
+```
+Counter.getInstance()
+    .getCount();
+    
+if (value != null
+    && value.equals(value2)
+```
+  
+When there are multiple continuation lines, indentation may be varied beyond +4 as desired. In general, two continuation lines use the same indentation level if and only if they begin with syntactically parallel elements.
 
 ### Line Length
 
@@ -271,6 +298,8 @@ direct access of the fields. Fields should rarely be `public`.
 However, it is encouraged to use the field directly when accessing internally
 (i.e. from inside the class). This is a performance optimization recommended
 by Google: http://developer.android.com/training/articles/perf-tips.html#GettersSetters
+
+Prefer Lombok @Getter and @Setter annotations.
 
 ## Brace Style
 
@@ -486,30 +515,5 @@ file:
      * THE SOFTWARE.
      */
 
-## Smiley Face
 
-Smiley faces are a very prominent style feature of the raywenderlich.com site!
-It is very important to have the correct smile signifying the immense amount of
-happiness and excitement for the coding topic. The closing square bracket ] is
-used because it represents the largest smile able to be captured using ASCII
-art. A closing parenthesis ) creates a half-hearted smile, and thus is not
-preferred.
-
-Bad:
-
-    :)
-
-Good:
-
-    :]
-
-## Credits
-
-This style guide is a collaborative effort from the most stylish
-raywenderlich.com team members:
-
-- [Darryl Bayliss](https://github.com/DarrylBayliss)
-- [Sam Davies](https://github.com/sammyd)
-- [Mic Pringle](https://github.com/micpringle)
-- [Ray Wenderlich](https://github.com/rwenderlich)
 
