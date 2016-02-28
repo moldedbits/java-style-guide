@@ -253,16 +253,31 @@ CoolUiWidget widget =
 ```
 The prime directive of line-wrapping is: prefer to break at a higher syntactic level. Also:
 
-When a line is broken at a non-assignment operator the break comes before the symbol. (Note that this is not the same practice used in Google style for other languages, such as C++ and JavaScript.)
+When a line is broken at a non-assignment operator the break comes before the symbol.
 This also applies to the following "operator-like" symbols: the dot separator (.), the ampersand in type bounds (<T extends Foo & Bar>), and the pipe in catch blocks (catch (FooException | BarException e)).
 When a line is broken at an assignment operator the break typically comes after the symbol, but either way is acceptable.
 This also applies to the "assignment-operator-like" colon in an enhanced for ("foreach") statement.
 A method or constructor name stays attached to the open parenthesis (() that follows it.
 A comma (,) stays attached to the token that precedes it.
-4.5.2 Indent continuation lines at least +4 spaces 
 
-When line-wrapping, each line after the first (each continuation line) is indented at least +4 from the original line.
+__BAD:__
+```
+Counter.getInstance().
+    getCount();
+    
+if (value != null && 
+    value.equals(value2)
+```
 
+__GOOD:__
+```
+Counter.getInstance()
+    .getCount();
+    
+if (value != null
+    && value.equals(value2)
+```
+  
 When there are multiple continuation lines, indentation may be varied beyond +4 as desired. In general, two continuation lines use the same indentation level if and only if they begin with syntactically parallel elements.
 
 ### Line Length
