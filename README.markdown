@@ -80,20 +80,19 @@ On the whole, naming should follow Java standards.
 
 ### Packages
 
-Package names are all __lower-case__, multiple words concatenated together,
-without
-hypens or underscores:
+Package names are all lowercase, with consecutive words simply concatenated together (no underscores, no hyphens).
 
 __BAD__:
 
 ```java
-com.RayWenderlich.funky_widget
+com.example.deepSpace
+com.example.deep_space
 ```
 
 __GOOD__:
 
 ```java
-com.raywenderlich.funkywidget
+com.example.deepspace
 ```
 
 ### Classes & Interfaces
