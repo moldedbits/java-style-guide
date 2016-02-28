@@ -205,7 +205,7 @@ private enum CompassDirection { EAST, NORTH, WEST, SOUTH }
 
 ## Spacing
 
-Spacing is especially important in raywenderlich.com code, as code needs to be
+Spacing is especially important in MoldedBits code, as code needs to be
 easily readable as part of the tutorial. Java does not lend itself well to this.
 
 ### Indentation
@@ -214,7 +214,7 @@ Indentation is using spaces - never tabs.
 
 #### Blocks
 
-Indentation for blocks uses 2 spaces (not the default 4):
+Each time a new block or block-like construct is opened, the indent increases by two spaces. When the block ends, the indent returns to the previous indent level. The indent level applies to both code and comments throughout the block. 
 
 __BAD:__
 
@@ -234,6 +234,8 @@ for (int i = 0; i < 10; i++) {
 
 #### Line Wraps
 
+Terminology Note: When code that might otherwise legally occupy a single line is divided into multiple lines, typically to avoid overflowing the column limit, this activity is called line-wrapping.
+
 Indentation for line wraps should use 4 spaces (not the default 8):
 
 __BAD:__
@@ -249,6 +251,19 @@ __GOOD:__
 CoolUiWidget widget =
     someIncrediblyLongExpression(that, reallyWouldNotFit, on, aSingle, line);
 ```
+The prime directive of line-wrapping is: prefer to break at a higher syntactic level. Also:
+
+When a line is broken at a non-assignment operator the break comes before the symbol. (Note that this is not the same practice used in Google style for other languages, such as C++ and JavaScript.)
+This also applies to the following "operator-like" symbols: the dot separator (.), the ampersand in type bounds (<T extends Foo & Bar>), and the pipe in catch blocks (catch (FooException | BarException e)).
+When a line is broken at an assignment operator the break typically comes after the symbol, but either way is acceptable.
+This also applies to the "assignment-operator-like" colon in an enhanced for ("foreach") statement.
+A method or constructor name stays attached to the open parenthesis (() that follows it.
+A comma (,) stays attached to the token that precedes it.
+4.5.2 Indent continuation lines at least +4 spaces 
+
+When line-wrapping, each line after the first (each continuation line) is indented at least +4 from the original line.
+
+When there are multiple continuation lines, indentation may be varied beyond +4 as desired. In general, two continuation lines use the same indentation level if and only if they begin with syntactically parallel elements.
 
 ### Line Length
 
