@@ -125,7 +125,7 @@ For example:
 ```java
 public class MyClass {
   public static final int SOME_CONSTANT = 42;
-  public int publicField;
+  public int mPublicField;
   private static MyClass sSingleton;
   int mPackagePrivate;
   private int mPrivate;
