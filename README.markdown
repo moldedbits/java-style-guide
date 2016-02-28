@@ -70,8 +70,6 @@ From now on, projects you create _should_ follow the correct style guidelines.
   + [XML Attribute Ordering](#xml-attribute-ordering)
 - [Language](#language)
 - [Copyright Statement](#copyright-statement)
-- [Smiley Face](#smiley-face)
-- [Credit](#credits)
 
 
 ## Nomenclature
@@ -517,6 +515,5 @@ file:
      * THE SOFTWARE.
      */
 
-## Credits
 
 
